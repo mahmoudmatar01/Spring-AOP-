@@ -1,41 +1,22 @@
 # Spring Aspect Oriented Programming (AOP) 
 
-**Aspect-Oriented Programming (AOP)** is a powerful paradigm that enhances modularity in Java applications by addressing cross-cutting concerns—concerns that affect multiple components—separately from the core business logic. In a Spring environment, AOP provides a clean and efficient way to modularize aspects such as logging, security, and transaction management.
+**Aspect-oriented programming (AOP)** is a powerful paradigm that enhances modularity in Java applications by addressing cross-cutting concerns—concerns that affect multiple components—separately from the core business logic. In a Spring environment, AOP provides a clean and efficient way to modularize aspects such as logging, security, and transaction management.
 
 # Table of Contents
 
 1. [Introduction](#introduction)
 2. [Key Concepts](#key-concepts)
-    - [Aspect](#aspect)
-    - [Join Point](#join-point)
-    - [Advice](#advice)
-    - [Pointcut](#pointcut)
-    - [Target Object](#target-object)
-    - [AOP Proxy](#aop-proxy)
-    - [Weaving](#weaving)
 3. [Spring Boot Starter AOP](#spring-boot-starter-aop)
-    - [Dependency Configuration](#dependency-configuration)
-    - [Enabling AOP Configuration](#enabling-aop-configuration)
 4. [Advice Types](#advice-types)
-    - [Before Advice](#before-advice)
-    - [After Returning Advice](#after-returning-advice)
-    - [After Throwing Advice](#after-throwing-advice)
-    - [After (Finally) Advice](#after-finally-advice)
-    - [Around Advice](#around-advice)
 5. [Example: Logging Time Aspect](#example-logging-time-aspect)
 6. [Aspect Ordering in Spring AOP](#aspect-ordering-in-spring-aop)
-    - [Default Order](#default-order)
-    - [Aspect Execution Order](#aspect-execution-order)
-    - [Multiple Aspects](#multiple-aspects)
-    - [Same Order Value](#same-order-value)
-    - [Example](#example)
 7. [Conclusion](#conclusion)
 
 
 
 ## Introduction
 
-Aspect-Oriented Programming (AOP) is a programming paradigm that enhances modularity by enabling the separation of cross-cutting concerns from the main business logic. Cross-cutting concerns, such as logging, security, and transaction management, are aspects of the application that affect multiple components. AOP allows developers to add additional behavior to existing code without modifying the code itself, promoting cleaner and more maintainable code.
+Aspect-oriented programming (AOP) is a programming paradigm that enhances modularity by enabling the separation of cross-cutting concerns from the main business logic. Cross-cutting concerns, such as logging, security, and transaction management, are aspects of the application that affect multiple components. AOP allows developers to add additional behavior to existing code without modifying the code itself, promoting cleaner and more maintainable code.
 
 ## Key Concepts
 
@@ -49,7 +30,7 @@ A join point is a specific point in the application, such as method execution, w
 
 ### Advice
 
-Advices are actions taken for a particular join point. They include "before," "after," and "around" actions that can be executed at specific points in the program's execution.
+Advice is action taken for a particular join point. They include "before," "after," and "around" actions that can be executed at specific points in the program's execution.
 
 ### Pointcut
 
@@ -71,7 +52,7 @@ Weaving is the process of linking aspects with objects to create advised proxy o
 
 Spring Boot Starter AOP is a dependency that provides both Spring AOP and AspectJ capabilities. While AOP provides basic AOP features, AspectJ offers a complete AOP framework. To include the Spring Boot Starter AOP in your project, add the following dependency to your Maven or Gradle configuration:
 
-```xml
+```XML
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-aop</artifactId>
@@ -111,7 +92,7 @@ In Aspect-Oriented Programming (AOP), advice represents the actions taken at spe
    - Ideal for cleanup tasks, resource deallocation, or finalization operations.
 
 5. **Around Advice:**
-   - Most powerful type, wrapping the target method.
+   - The most powerful type, wrapping the target method.
    - Provides complete control over the method invocation, allowing you to modify input parameters, handle exceptions, or even bypass the original method.
    - Useful for complex scenarios where fine-grained control over the method execution is required.
 
@@ -179,7 +160,7 @@ If you don't explicitly specify an order using the `@Order` annotation, the defa
 
 #### Aspect Execution Order
 
-Aspects are applied to target methods based on their order. Lower order values indicate higher precedence, and aspects with lower order values are executed first. This allows you to define a clear sequence for applying aspects to your methods.
+Aspects are applied to target methods based on their order. Lower-order values indicate higher precedence and aspects with lower-order values are executed first. This allows you to define a clear sequence for applying aspects to your methods.
 
 #### Multiple Aspects
 
